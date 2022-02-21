@@ -13,7 +13,17 @@ def expenses():
     oil = float(input('Enter monthly oil change expense: $'))
     tires = float(input('Enter monthly expense on tires: $'))
     maintenance = float(input('Enter monthly cost on other maintenances: $'))
+    monthlyCost(loanPayment, insurance, gas, oil, tires, maintenance)
 
-    def monthlyCost(loanPayment, insurance, gas, oil, tires, maintinance):
+def monthlyCost(loanPayment, insurance, gas, oil, tires, maintenance):
+    # Calculating and printing average monthly expenses of automobile
+    totalMonthlyCost = loanPayment + insurance + gas + oil + tires + maintenance
+    print('\nAverage monthly expense of automobile is $', format(totalMonthlyCost, '.2f'), sep='')
+    yearlyCost(totalMonthlyCost)
 
-        # Calculating monthly expenses of automobile
+def yearlyCost(totalMonthlyCost):
+    # Calculating and printing average yearly expenses of automobile
+    yearlyExpense = totalMonthlyCost * 12
+    print('Average yearly expense of automobile is $', format(yearlyExpense, '.2f'), sep='')
+expenses()
+
